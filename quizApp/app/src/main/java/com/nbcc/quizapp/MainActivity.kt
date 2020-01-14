@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         //iterate through questions
         findViewById<Button>(R.id.next_button).setOnClickListener {
             questionIndex++;
-            if(questionIndex % 20 == 0){
+            if(questionIndex % questionBank.size == 0){
                 questionIndex = 0;
             }
             updateView();
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.prev_button).setOnClickListener {
             questionIndex--;
             if(questionIndex == -1){
-                questionIndex = 19;
+                questionIndex = questionBank.size - 1;
             }
             updateView();
 
